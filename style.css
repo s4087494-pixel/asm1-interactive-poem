@@ -1,0 +1,438 @@
+body {
+
+    height: auto;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.title {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+h1 {
+
+    font-family: "Powell Antique";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.912px;
+    width: 415px;
+    position: absolute;
+    top: 780px;
+    left: 770px
+}
+
+h2 {
+
+    font-family: "Powell Antique";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    color: #000000;
+    position: absolute;
+    top: 870px;
+    left: 920px;
+}
+
+p {
+    color: white;
+    font-family: "Powell Antique";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.608px;
+}
+
+.line1 {
+    position: absolute;
+    top: 1281px;
+    left: 475px;
+    mix-blend-mode: difference;
+
+}
+
+.line2 {
+    position: absolute;
+    top: 1389px;
+    left: 955px;
+    mix-blend-mode: difference;
+}
+
+.line3 {
+    position: absolute;
+    top: 1596px;
+    left: 600px;
+    mix-blend-mode: difference;
+
+}
+
+h3 {
+    color: #980900;
+    text-align: center;
+    font-family: "Powell Antique";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.912px;
+    position: absolute;
+    top: 1897px;
+    left: 850px;
+
+}
+
+.container1 {
+    height: auto;
+    display: inline;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    position: relative;
+    top: 800px;
+
+    position: sticky;
+    top: 0;
+    overflow-y: 1000px;
+}
+
+.panopticon {
+    position: absolute;
+    top: 5%;
+    left: -27.5%;
+}
+
+.panopticon2 {
+    position: absolute;
+    top: 5%;
+    right: -30.5%;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        clip-path: inset(100% 100% 100% 100%);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.panopticon,
+.panopticon2 {
+    animation: appear ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+.container3 {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -100;
+    top: 200px;
+    position: sticky;
+    top: 0;
+    overflow-y: 1000px;
+}
+
+.panopticon3 {
+    width: 35%;
+    height: 35%;
+}
+
+.container2 {
+    position: relative;
+    width: 100vw;
+    height: 1300px;
+
+    z-index: -1000;
+
+}
+
+.difference {
+    mix-blend-mode: difference;
+    width: 100vw;
+    height: 2000px;
+    position: sticky;
+    top: 0;
+}
+
+/*
+.redthreads {
+    background-color: pink;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.redthreads img {
+    width: 70%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    left: 100%;
+   /* mask-image: url(red-threads-mask.png);
+    mask-size: 100% 0%;
+    mask-repeat: no-repeat;
+    transition: mask-size 0.75s ease-in-out;
+    transition-delay: 0.25s;
+    transition: transform 0.75s ease-in-out;
+}
+/*@keyframes slideIn  {
+    from {
+        transform:left (0);
+        opacity: 0;
+    }
+    to {
+        transform: left (100);
+        opacity: 1;
+    }
+}
+.redthreads:hover .redthreads img {
+    animation: linear;
+ 
+} */
+
+/* ensure container clips the offscreen image */
+.fates {
+    position: absolute;
+    top: 4500px;
+    left: 0%;
+    width: 50%;
+
+}
+
+.redthreads {
+    position: absolute;
+    top: 4220px;
+    left: 35%;
+    overflow: hidden;
+    width: 120vw;
+    overflow: visible;
+
+}
+
+/* start off-screen (right), invisible, then slide in */
+.redthreads img {
+
+    width: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+    /* offscreen to right */
+    transition: transform 2s ease-in-out;
+}
+
+/*.redthreads2 {
+    position: absolute;
+    top: 4550px;
+    left: 0;
+    overflow: hidden;
+    width: 70%;
+}
+
+.redthreads2 img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    transform: translateX(-100%);
+
+    transition: transform 1s linear;
+}/*
+
+/* hover the .fates image (must be before .redthreads in the DOM) */
+.fates:hover~.redthreads img {
+    transform: translateX(-15%);
+}
+
+/*.fates:hover~.redthreads2 img {
+    transform: translateX(-30%);
+    /* use % or px — 30% brings it in "a bit" 
+}*/
+
+.hands {
+    position: absolute;
+    top: 5100px;
+    left: 45%;
+    width: 70%;
+}
+
+.hands img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*.eyes { 
+    position: absolute;
+    top: 100px;
+    width: 20%;
+}
+
+/* simple eye + pupil styling */
+.eyes {
+    position: absolute;
+    /* keep where you already place .eyes */
+    top: 100px;
+    /* adjust to match your layout if needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    pointer-events: none;
+    /* ensure eyes don't block hover events */
+}
+
+.eye {
+    position: relative;
+    width: 120px;
+    /* eyeball size - adjust */
+    height: 120px;
+    border-radius: 50%;
+    background: transparent;
+    /* if you have an eyeball image, put it as background */
+    overflow: visible;
+    /* allow pupil movement */
+}
+
+/* pupil uses CSS vars so JS can move it by changing --dx/--dy */
+  .pupil {
+    --dx: 0px;
+    position: absolute;
+    /* move horizontally by --dx, keep vertical centered with -50% */
+    transform: translate(calc(-50% + var(--dx)), -50%);
+    transition: transform 0.06s linear;
+    pointer-events: none;
+}
+
+#pupil1 {
+    background-image: url(pupil1.png);
+    background-size: cover;
+    width: 120px;
+    /* pupil size - adjust */
+    height: 120px;
+    top: 451%;
+    left: -115%;
+}
+
+#pupil2 {
+    background-image: url(pupil2.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    top: 367%;
+    left: 130%;
+}
+
+/* smaller screens: scale eyes down */
+@media (max-width: 600px) {
+    .eye {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pupil {
+        width: 14px;
+        height: 14px;
+
+    }
+}
+
+.box { 
+    background-color:white;
+    height: 187px;
+    width: 618px;
+    position: absolute;
+    top: 560px;
+    mix-blend-mode: difference;
+    color: #000000;
+    left:-400px;
+    cursor: grab;          /* <- make it draggable cursor */
+    touch-action: none;    /* <- prevents default touch gestures while dragging */
+}
+.box.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+.box p { 
+    mix-blend-mode: difference;
+    top: 35px;
+    left: 130px;
+    position:absolute;
+}
+
+.threads3 {
+    position: absolute;
+    top: 6000px;
+    left: -27%;
+    width: 150%;
+}
+h6 { 
+    position: relative;
+    top: -650px;
+    left: -50%;
+    color: #ffffff;
+    text-align: right;
+    font-family: "Powell Antique";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+
+
+} 
+
+.gif { 
+    position: absolute;
+    top: 6650px;
+    left: 41%;
+    width: 300px;
+    height:500px;
+    background-image: url(bind.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.gradient { 
+    position:absolute;
+    top: 7200px;;
+    width: 100vw;
+    height: 550vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), #FFBB61);
+    pointer-events: none; /* allow clicks to pass through */
+    z-index:-100;
+}
+
+.hug { 
+    position: absolute;
+    top: 10200px;
+    left: 7%;
+    width: 80%;
+}
